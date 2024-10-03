@@ -1,0 +1,9 @@
+title: Title
+preview_targets:
+  -
+    label: Term
+    url: '{permalink}'
+    refresh: true
+template: home
+term_template: home
+layout: layout

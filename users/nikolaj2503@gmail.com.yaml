@@ -1,0 +1,59 @@
+name: 'Nikolaj Albrechtsen'
+super: true
+avatar: nikolaj.jpg
+id: a7927e90-69ff-4a16-81f0-8f7de250b795
+password_hash: $2y$12$2nyypZfu7vJP8yxyHchd9.U8yd2rtJzw3gI4kkrXFdB06yTr0BGDa
+preferences:
+  theme: dark
+  locale: da
+  favorites:
+    -
+      name: 'Sider ‹ Samlinger'
+      url: collections/pages
+    -
+      name: indstillinger
+      url: 'collections/indstillinger?site=default'
+    -
+      name: 'My Nav'
+      url: nav/edit
+  nav:
+    reorder: true
+    sections:
+      top_level:
+        'top_level::dashboard': '@hide'
+        'content::collections::nyheder': '@move'
+        'content::collections::pages': '@move'
+        'top_level::side_indstillinger':
+          action: '@create'
+          display: 'Side Indstillinger'
+          url: collections/indstillinger/entries/a929495b-a310-4ceb-8fca-e691b3b5a5f6
+          icon: settings
+        'top_level::tilbage_til_hjemmesiden':
+          action: '@create'
+          display: 'Tilbage til hjemmesiden'
+          url: /
+          icon: hyperlink
+      content:
+        action: '@move'
+        items:
+          'content::taxonomies': '@move'
+          'content::globals': '@move'
+      settings:
+        action: '@move'
+        reorder: true
+        items:
+          'fields::blueprints': '@move'
+          'settings::preferences::cp_nav': '@move'
+          'settings::site': '@inherit'
+          'settings::preferences::general': '@move'
+          'settings::preferences':
+            action: '@move'
+            children:
+              'settings::preferences::general': '@move'
+      fields: '@move'
+      tools: '@move'
+  collections:
+    nyheder:
+      after_save: create_another
+    indstillinger:
+      after_save: continue_editing

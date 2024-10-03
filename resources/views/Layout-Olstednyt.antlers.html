@@ -1,0 +1,64 @@
+{{ collection:indstillinger }}
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}" class="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ side_navn }}</title>
+    <!--  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{ vite src="resources/css/site.css" }}
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=components"></script>
+</head>
+<style>
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(113, 100%, 25%) hsl(0, 0%, 100%);
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: hsla(0, 0%, 100%, 0);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #0f8000;
+        border-radius: 6px;
+        border: 3px none hsla(0, 0%, 100%, 0);
+    }
+</style>
+<style type="text/tailwindcss">
+    a,
+    span {
+        @apply text-white;
+    }
+
+    svg {
+        @apply text-gray-100 w-5 h-5 transition duration-75 group-hover:text-gray-100 !important;
+    }
+</style>
+
+<body class="bg-green-700">
+    {{ partial:partials.nav }}
+
+
+    {{ if side_navigation }}
+        {{ partial:partials.aside }}
+    {{ /if }}
+
+    {{ template_content }}
+
+</body>
+
+</html>
+{{ /collection:indstillinger }}

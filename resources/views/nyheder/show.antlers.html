@@ -1,0 +1,15 @@
+{{ partial:partials.aside }}
+<div class="sm:ml-64 mt-14">
+    <div class="w-full h-screen bg-green-700 flex mx-auto justify-center">
+        <div class="w-3/4 block bg-green-600 text-white mx-auto text-center justify-center">
+            <img src="{{ image }}" class="w-[100%] h-[30rem]" alt="">
+            <div class="w-full py-2 px-4 flex bg-green-700 justify-center gap-4">
+                <span class="text-4xl text-left">{{ title }}</span>
+                <span class="text-4xl text-left">{{ author:name }}</span>
+            </div>
+            <hr class="border-y-2 border-y-white">
+            <p class="my-4 text-lg">{{ nyhed_content }}</p>
+        </div>
+    </div>
+</div>
+

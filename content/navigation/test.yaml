@@ -1,0 +1,9 @@
+title: Test
+collections:
+  - pages
+root: true
+<ul>
+{{ nav:footer }}
+    <li><a href="{{ url }}">{{ title }}</a></li>
+{{ /nav:footer }}
+</ul>

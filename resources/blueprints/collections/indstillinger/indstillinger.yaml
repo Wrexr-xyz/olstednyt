@@ -1,0 +1,46 @@
+title: indstillinger
+tabs:
+  main:
+    display: Hovedindhold
+    sections:
+      -
+        fields:
+          -
+            handle: side_navn
+            field:
+              type: text
+              validate:
+                - required
+              display: 'side navn'
+          -
+            handle: slogan
+            field:
+              placeholder: 'For nye og gamle borgere'
+              default: 'For nye og gamle borgere'
+              type: text
+              display: slogan
+          -
+            handle: side_logo
+            field:
+              container: assets
+              type: assets
+              display: side_logo
+              folder: img
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -1,0 +1,119 @@
+title: Page
+tabs:
+  main:
+    display: Hovedindhold
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: bard_field
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - code
+                - codeblock
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              smart_typography: true
+              word_count: true
+              remove_empty_nodes: false
+              target_blank: true
+              type: bard
+              display: 'Bard Field'
+              save_html: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+          -
+            handle: kode
+            field:
+              antlers: true
+              type: code
+              display: kode
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+      -
+        display: 'Fremvis følgende felter'
+        instructions: 'Vælg om disse felter skal vises på denne side.'
+        fields:
+          -
+            handle: billeder
+            field:
+              type: toggle
+              display: Billeder
+              inline_label: Test123
+          -
+            handle: nyheder
+            field:
+              default: true
+              type: toggle
+              display: Nyheder
+          -
+            handle: side_navigation
+            field:
+              default: true
+              type: toggle
+              display: 'Side Navigation'
+              instructions: 'Vælg om du vil vise alle linksne til venstre på denne side.'
+          -
+            handle: author
+            field:
+              type: users
+              display: 'Skrevet Af'
+          -
+            handle: dato
+            field:
+              earliest_date: '2024-09-23'
+              latest_date: '2024-09-23'
+              type: date
+              display: Dato

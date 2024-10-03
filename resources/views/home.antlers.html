@@ -1,0 +1,30 @@
+<div class="{{ if side_navigation }}  {{ /if }}">
+    <div class="mt-[57px]">
+        <!-- Billeder -->
+        {{ if billeder }}
+            {{ partial:partials.billeder }}
+        {{ /if }}
+
+        <!-- Sidens indhold -->
+
+        <div class="grid sm:grid-flow-col mb-4 h-screen">
+            <div class="sm:col-span-12 flex justify-center bg-green-800 text-white sm:-mt-1 pb-10 px-6">
+                <div class="my-10 sm:mx-10 max-w-5xl">
+                    {{ bard_field }}
+                    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous">
+                        tinyMCE.triggerSave();
+                        var val = $('textarea').val();
+                        val = val.replace(/<p>&nbsp/g, '<p class="bg-red-500">');
+                    </script>
+                    {{ kode }}
+                </div>
+            </div>
+            {{ if nyheder }}
+                {{ partial:partials.nyheder }}
+            {{ /if }}
+
+
+
+        </div>
+    </div>
+</div>
